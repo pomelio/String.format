@@ -34,7 +34,7 @@ function format(string,params){
     try {
       capture = '["'+capture.split('.').join('"]["')+'"]';
       replace = eval('params'+capture);
-      if (replace) {
+      if (replace !== undefined) {
         replace = JSON.decycled(replace);
         if(typeof replace === 'string'){
           replace = replace.replace(/(^\"|\"$)/g,'').replace(/(\\n|\\r)/g,'\n').replace(/\\t/g,'\t');
